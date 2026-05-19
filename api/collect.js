@@ -12,14 +12,16 @@ export default async function handler(req, res) {
 
   const page = req.query.page || "unknown";
 
-  console.log({
-    page,
-    ip,
-    country,
-    referer,
-    userAgent,
-    time: new Date().toISOString(),
-  });
+  console.log(
+    JSON.stringify({
+      page,
+      ip,
+      country,
+      referer,
+      userAgent,
+      time: new Date().toISOString(),
+    })
+  );
 
   return res.status(200).send("");
 }
